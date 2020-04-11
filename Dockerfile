@@ -27,7 +27,7 @@ WORKDIR "/usr/local/tomcat/webapps"
 
 RUN set -x && \
     cp "$JSTORM_HOME/jstorm-ui-${JSTORM_VERSION}.war" ./ && \
-    mv "ROOT" "ROOT.old" && \
+    rm -rf "ROOT" && \
     ln -s "jstorm-ui-${JSTORM_VERSION}" "ROOT"
     
 WORKDIR "/usr/local/tomcat/bin"
